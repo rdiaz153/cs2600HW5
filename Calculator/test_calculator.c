@@ -98,6 +98,24 @@ void test_multiply_overflow(void) {
     TEST_ASSERT_TRUE(result < INT_MAX);
 }
 
+void test_divide_positive_numbers(void) {
+    TEST_ASSERT_EQUAL(4, divide(8, 2)); // Expected 8 / 2 = 4
+}
+
+void test_divide_positive_and_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(-6, divide(-36, 6));
+}
+
+void test_divide_negative_numbers(void) {
+    TEST_ASSERT_EQUAL(8, divide(-56, -7));
+}
+void test_divide_zero(void) {
+    TEST_ASSERT_EQUAL(0, divide(0, 1));
+}
+
+//void test_divide_
+// void test_divide_
+
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_add_positive_numbers);
@@ -120,5 +138,12 @@ int main(void) {
     RUN_TEST(test_multiply_zero);
     RUN_TEST(test_multiply_overflow);
     RUN_TEST(test_multiply_underflow);
+
+    RUN_TEST(test_divide_positive_numbers);
+    RUN_TEST(test_divide_positive_and_negative_numbers);
+    RUN_TEST(test_divide_negative_numbers);
+    RUN_TEST(test_divide_zero);
+    // RUN_TEST(test_divide_overflow);
+    // RUN_TEST(test_divide_underflow);
     return UNITY_END();
 }
